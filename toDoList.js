@@ -6,6 +6,7 @@ let toDos = [ ]
 
 function saveToDos() {
     // console.log(toDos)
+    
     localStorage.setItem("todos", JSON.stringify(toDos))
 }
 
@@ -18,7 +19,8 @@ function deleteToDo(e) {
 
 function paintToDo(newTodo) {
     const li = document.createElement("li");
-    li.setAttribute("id", newTodo.id)
+    li.setAttribute("id", newTodo.id);
+    li.setAttribute("draggable", "true");
     const span = document.createElement("span")
     const button = document.createElement("button")
     button.innerText = "❌"
